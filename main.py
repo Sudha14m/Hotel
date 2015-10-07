@@ -21,18 +21,23 @@ from google.appengine.ext import ndb
 from google.appengine.api import users
 
 
+
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-       template = JINJA_ENVIRONMENT.get_template('index.html')
-       self.response.write(template.render())
-    def post(self):
-       template = JINJA_ENVIRONMENT.get_template('index.html')
-       self.response.write(template.render())
+        # Checks for active Google account session
+        user = users.get_current_user()
+        if user:
+            self.response.write('Hello, ' + user.nickname())
+        else:
+            self.redirect(users.create_login_url(self.request.uri))
+
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
