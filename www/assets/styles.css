@@ -1,0 +1,210 @@
+ 
+body {
+    background: url('hotel.jpg') no-repeat fixed center center;
+    background-size: cover;
+    font-family: Montserrat;
+}
+#topHeader
+{
+	
+	position:absolute;
+  	text-align:center;
+    background-image: linear-gradient(to bottom, #576066, #e4e8eb);
+ 
+	height: 124px;
+      width: 1290px;
+}
+
+.status
+{ 
+	 border-radius: 5px;
+	 background:#CCCCCC;
+	    opacity:0.6; 
+	
+}
+
+.getvalues
+{
+padding-left:20px;
+ 
+
+}
+.logo {
+    width: 213px;
+    height: 40px;
+	color:#990000;
+	 background:#FFFFFF;
+     opacity:0.9; 
+	 text-align:center;
+    border-radius: 19px;
+	font-size:17px;
+    margin: 0 auto;
+	 
+	 
+}
+
+.login-block {
+    width: 320px;
+    padding: 20px;
+	   color: #990000;
+    background: #fff;
+   
+ background-color:#FFFFFF;
+   opacity:0.9; 
+    border-radius: 19px;
+    margin: 0 auto;
+}
+
+.login-block-admin {
+    width: 600px;
+    padding: 20px;
+	opacity:0.9;
+	   color: #990000;
+    background: #fff;
+    border-radius: 18px;
+ 
+    margin: 0 auto;
+}
+.login-block-admin h1 {
+    text-align: center;
+     color: #990000;
+    font-size: 18px;
+	
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+h1
+{
+  color: #990000;
+}3
+.login-block h1 {
+    text-align: center;
+     color: #990000;
+    font-size: 18px;
+	
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.addrooms
+{ 
+
+ display:inline-block;
+}
+#customerDetails ,#show
+{
+background-color:#FFFFFF;
+ height:320px;
+ border:thin;
+ width:250px;
+    padding-left:30px;
+    border:1px solid red;
+    margin-right:10px;
+	float:left;
+    
+}
+ 
+.Top_header
+{
+position:relative;
+left:1090px;
+display:table-cell;
+color:#333333;
+}
+.showBookings
+{
+ 
+ background-color:#000000;
+border:thick;
+  
+
+}
+#inputbox
+{
+padding-left:20px;
+}
+.login-block input {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-family: Montserrat;
+    padding: 0 20px 0 50px;
+    outline: none;
+}
+
+.login-block input#username {
+    background: #fff url('user.png') 20px top no-repeat;
+    background-size: 16px 80px;
+}
+ 
+
+.login-block input#password {
+    background: #fff url('pass.png') 20px top no-repeat;
+    background-size: 16px 80px;
+}
+ 
+ 
+ 
+#main
+{
+font-family:"Times New Roman", Times, serif;
+text-align:center;
+
+
+}
+#buttons
+{
+padding-left:915px; 
+}
+
+#button
+{
+opacity:0.9;
+   font-family: Georgia;
+     color: #990000;
+	 padding: 2px 15px 6px 10px;
+     background-image: linear-gradient(to bottom, #f06c7e, #ffffff);
+	   border-radius: 8px;
+	     text-decoration: none;
+		   
+}
+
+#button:hover
+{
+  color: #990000;
+  opacity:0.9;
+  font-family: Georgia;
+  background-image: linear-gradient(to bottom, #ffffff, #e8767c);
+    border-radius: 8px;
+		 padding: 2px 15px 6px 10px;
+ 
+	  text-decoration: none;
+}
+.btn {
+opacity:0.9;
+  background: #f06c7e;
+ 
+  background-image: linear-gradient(to bottom, #f06c7e, #ffffff);
+  
+  border-radius: 11px;
+  font-family: Georgia;
+  color: #990000;
+  font-size: 20px;
+  padding: 6px 17px 9px 15px;
+  border: solid #33a1e6 0px;
+  text-decoration: none;
+}
+
+.btn:hover {
+opacity:0.9;
+  background: #ffffff;
+    color: #990000;
+ 
+  background-image: linear-gradient(to bottom, #ffffff, #e8767c);
+  text-decoration: none;
+}
