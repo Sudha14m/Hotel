@@ -3,7 +3,9 @@
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Home page</title>
+
 		<link rel="stylesheet" href="/assets/styles.css" type="text/css" />
+        <script src="hotelapp.js"></script>
 	</head>
 	<body>
 
@@ -21,14 +23,16 @@
 			<div class="login-block">
 				<h1 align="center">Login</h1>
 
-					<form method="post" action=" ">
-				<input type="text" value="" placeholder="Username" id="username" />
-				<input type="password" value="" placeholder="Password" id="password" />
-				<input  id="button" type ="submit" name="submit" value="LOGIN"  align="middle" />
+				<form method="post" action="\index">
+				<input type="text" name="user" value="" placeholder="Username" id="username" />
+                <input type="password" name="pass" value="" placeholder="Password" id="password" />
+				<button onclick="login()">Login</button>
 				</form>
 				
 				<div align="center" class="status"> <p> Show status  (initially remains invisible) </p>  		<!--- This div is for showing the status .... whether the user is successfully  logged in or not----->
 				</div>
+
+         <button onclick="logout()">Logout</button>
 			</div>
 			 
 	

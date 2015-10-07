@@ -17,10 +17,11 @@
 import webapp2
 import os
 import jinja2
+import cgi
 from google.appengine.ext import ndb
 from google.appengine.api import users
-
-
+import traceback
+import logging
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -28,17 +29,57 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     autoescape=True)
 
 
+class Person(ndb.Model):
+    username = ndb.StringProperty(indexed =True)
+    password = ndb.StringProperty(indexed = False)
+    semail = ndb.StringProperty(indexed = True)
+    type = ndb.StringProperty(indexed = False)
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         # Checks for active Google account session
         user = users.get_current_user()
+
         if user:
             self.response.write('Hello, ' + user.nickname())
+            q1=Person.query(Person.semail==user.email()).get()
+            if q1 is None:
+                template=JINJA_ENVIRONMENT.get_template('/www/index.html')
+                self.response.write(template.render())
+            else:
+                if q1.type == 'admin':
+                    template=JINJA_ENVIRONMENT.get_template('/www/adminhome.html')
+                    self.response.write(template.render())
+                else:
+                    template=JINJA_ENVIRONMENT.get_template('/www/users.html')
+                    self.response.write(template.render())
+
         else:
             self.redirect(users.create_login_url(self.request.uri))
 
+class loginController(webapp2.RequestHandler):
+    def get(self):
+         user=users.get_current_user()
+         if user:
+            q=Person.query(Person.mailId != None).count()
+            template=None
+            if q is not 0:
+                Person(username=self.request.post('user'),semail=self.request.post('email'),password=self.request.post('pass'),type="user").put()
+                template=JINJA_ENVIRONMENT.get_template('/www/users.html')
+            else:
+                 self.person=Person(username=self.request.post('user'),semail=self.request.post('email'),password=self.request.post('pass'),type="admin").put()
+                 template=JINJA_ENVIRONMENT.get_template('/www/adminpage.html')
+            self.response.write(template.render())
+         else:
+            self.redirect(users.create_login_url(self.request.uri))
+
+class logout(webapp2.RequestHandler):
+    def get(self):
+        self.redirect(users.create_login_url(self.request.uri))
 
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    ('/index', loginController),
+    ('/logout',logout),
 ], debug=True)
