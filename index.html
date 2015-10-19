@@ -6,76 +6,60 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
     <title>Hotel Plaza</title>
- 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-   
     <link href="css/hotel.css" rel="stylesheet">
-	 
 	<link href='https://fonts.googleapis.com/css?family=Crimson+Text:400italic,400' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
     <div class="brand">Hotel Plaza</div>
     <div class="address-bar">Hyderabad, Gachibowly</div>
-
-    
     <nav class="navbar navbar-default" >
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            
-            
-            <div class="navbar-header">
+        
+        
+        <div class="container">			<!-- This container is for the navigation bar -->
+             <!-- The box shape for the toggle (When the page size is reduced) -->
+              <div class="navbar-header">			
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                
-                </button>
+                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
                 <a class="navbar-brand" href="index.html">Hotel Plaza</a>
             </div>
             
             
-            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!-- The menu items to be shown when the page size is reduced -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li> 
-                     <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
+                    <li>  <a href="index.html">Home</a> </li> 
+                     <li>  <a href="contact.html">Contact</a>  </li>
                 </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        
-        
-        </div>
-        <!-- /.container -->
-    </nav>
+            </div> <!-- /.navbar-collapse -->
+        </div>    <!-- /.container -->
+     </nav>
 
 
-    <div class="container">
+    <div class="container">			<!-- This container is for the images scroll -->
+        
         <div class="row">
             <div class="box">
                 <div class="col-lg-12 text-center">
                     <div id="carousel-example-generic" class="carousel slide">
                         <!-- Indicators -->
+                        
                         <ol class="carousel-indicators hidden-xs">
                             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                             <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                            
-                        </ol>
-
-
-
-                        <!-- Wrapper for slides -->
+                         </ol>
+                         
+                         
+ 						<!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
                                 <img class="img-responsive img-full" src="img/slide-1.jpg" alt="">
@@ -91,17 +75,7 @@
                             </div>
                             
                         </div>
-
-
-
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                            <span class="icon-prev"></span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                            <span class="icon-next"></span>
-                        </a>
-                    </div>
+ 					</div>
                     
                 </div>
             </div>
@@ -118,10 +92,7 @@
                      <img class="img-responsive img-border img-left" src="img/swimming.jpg" alt="">
                     <img  class="img-responsive img-border img-right" src="img/gym.jpg" alt="">
                     <img  class="img-responsive img-border img-left" src="img/games.jpg" alt="">
-                  
                     <img class="img-responsive img-border img-right" src="img/meeting.jpg" alt="">
-                    
-                    
                     <hr class="visible-xs">
                     <p>There is huge Swimming pool of 1.5feet and 3 feet seperate for adults and children with ll the costumes available.</p>
                     <p>A meeting hall with all required projector screen, AC, Overhead projector,  Slide projector, Film projector, Projection stands,Remote control for projectors screens .</p>
@@ -142,6 +113,7 @@
                    
                    
                 </div>
+              		   <form  action="#">
                				<div class="form-group col-lg-2">
                                 <label>No Of rooms to book</label>
                                 <input type="text" class="form-control">
@@ -156,19 +128,19 @@
                             </div>
                             <br>
                             <div class="form-group col-lg-3">
-                                <label>From date( in format: DD-MM-YYYY)</label>
+                                <label>From date(in format: DD-MM-YYYY)</label>
                                 <input type="tel" class="form-control">
                             </div>
                             <div class="form-group col-lg-3">
-                                <label>Till date( in format: DD-MM-YYYY</label>
+                                <label>Till date(in format: DD-MM-YYYY)</label>
                                 <input type="tel" class="form-control">
                             </div>
                             
                              
-                            <div class="form-group col-lg-12">
-                                <input type="hidden" name="save" value="contact">
+                            <div class="form-group col-lg-12"> 
                                 <button type="submit" class="btn btn-default">Check Availability</button>
                             </div>
+                       </form>
             </div>
         </div>
 
