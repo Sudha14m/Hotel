@@ -4,7 +4,9 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="helloworls" />
     <orderEntry type="module" module-name="appengine" />
+    <orderEntry type="module" module-name="ajaxchat" />
+    <orderEntry type="module" module-name="GeneralCompetencyTest" />
+    <orderEntry type="module" module-name="helloworls" />
   </component>
 </module>

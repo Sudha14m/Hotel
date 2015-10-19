@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/Desktop/taraquiz-master/taraquiz-master/GeneralCompetencyTest/.idea/GeneralCompetencyTest.iml" filepath="$USER_HOME$/Desktop/taraquiz-master/taraquiz-master/GeneralCompetencyTest/.idea/GeneralCompetencyTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Hotel.iml" filepath="$PROJECT_DIR$/.idea/Hotel.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/ajaxchat/.idea/ajaxchat.iml" filepath="$USER_HOME$/Desktop/ajaxchat/.idea/ajaxchat.iml" />
       <module fileurl="file://$USER_HOME$/Desktop/appengine/appengine/.idea/appengine.iml" filepath="$USER_HOME$/Desktop/appengine/appengine/.idea/appengine.iml" />
       <module fileurl="file://$PROJECT_DIR$/../hotelmanagement/.idea/helloworls.iml" filepath="$PROJECT_DIR$/../hotelmanagement/.idea/helloworls.iml" />
     </modules>

@@ -6,12 +6,9 @@ threadsafe: yes
 
 
 handlers:
-- url: /javascripts
-  static_dir: javascripts
+- url: /www/assets
+  static_dir: /www/assets
 
-
-- url: /assets
-  static_dir: /assets
 
 - url: /(.+)
   static_files: www/\1

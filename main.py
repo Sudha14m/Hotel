@@ -30,10 +30,35 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 
 class Person(ndb.Model):
-    username = ndb.StringProperty(indexed =True)
+    username = ndb.StringProperty(indexed =False)
     password = ndb.StringProperty(indexed = False)
     semail = ndb.StringProperty(indexed = True)
     type = ndb.StringProperty(indexed = False)
+
+
+class LoginController(webapp2.RequestHandler):
+    def post(self):
+        self.response.write("hii")
+        user = users.get_current_user()
+        if user:
+            q = Person.query(Person.semail!= None).count()
+            template=None
+            if q is not 0:
+                Person(username=self.request.post('username'),semail=user.email,password=self.request.post('password'),
+                       type="user").put()
+                template=JINJA_ENVIRONMENT.get_template('/www/users.html')
+                self.response.write(template.render())
+            else:
+                 Person(username=self.request.post('username'),semail=user.email,password=self.request.post('password'),
+                        type="admin").put()
+                 template=JINJA_ENVIRONMENT.get_template('/www/adminpage.html')
+                 self.response.write(template.render())
+        else:
+            self.redirect(users.create_login_url(self.request.uri))
+
+    def get(self):
+        self.response.write("hii")
+
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -42,44 +67,25 @@ class MainHandler(webapp2.RequestHandler):
 
         if user:
             self.response.write('Hello, ' + user.nickname())
-            q1=Person.query(Person.semail==user.email()).get()
+            q1 = Person.query(Person.semail==user.email()).get()
             if q1 is None:
-                template=JINJA_ENVIRONMENT.get_template('/www/index.html')
+              #  template = JINJA_ENVIRONMENT.get_template('/www/index.html')
+                template = JINJA_ENVIRONMENT.get_template('/index1.html')
+
                 self.response.write(template.render())
             else:
                 if q1.type == 'admin':
-                    template=JINJA_ENVIRONMENT.get_template('/www/adminhome.html')
+                    template = JINJA_ENVIRONMENT.get_template('/www/adminhome.html')
                     self.response.write(template.render())
                 else:
-                    template=JINJA_ENVIRONMENT.get_template('/www/users.html')
+                    template = JINJA_ENVIRONMENT.get_template('/www/users.html')
                     self.response.write(template.render())
 
         else:
             self.redirect(users.create_login_url(self.request.uri))
 
-class loginController(webapp2.RequestHandler):
-    def get(self):
-         user=users.get_current_user()
-         if user:
-            q=Person.query(Person.mailId != None).count()
-            template=None
-            if q is not 0:
-                Person(username=self.request.post('user'),semail=self.request.post('email'),password=self.request.post('pass'),type="user").put()
-                template=JINJA_ENVIRONMENT.get_template('/www/users.html')
-            else:
-                 self.person=Person(username=self.request.post('user'),semail=self.request.post('email'),password=self.request.post('pass'),type="admin").put()
-                 template=JINJA_ENVIRONMENT.get_template('/www/adminpage.html')
-            self.response.write(template.render())
-         else:
-            self.redirect(users.create_login_url(self.request.uri))
-
-class logout(webapp2.RequestHandler):
-    def get(self):
-        self.redirect(users.create_login_url(self.request.uri))
-
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/index', loginController),
-    ('/logout',logout),
+    ('/index', LoginController)
 ], debug=True)

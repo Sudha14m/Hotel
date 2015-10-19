@@ -1,6 +1,6 @@
 
 function login() {
-   window.location="/";
+   window.location="/login";
 }
 function logout() {
     window.location="/logout";
